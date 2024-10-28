@@ -1,0 +1,38 @@
+.form_page {
+    background-image: url('/public/images/auth-bg.jpg');
+    padding: 0;
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* height: 100vh;
+    display: flex; */
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.login_page {
+    background: rgba(0, 0, 0, 0.5) !important;
+    padding: 5rem 2rem;
+}
+
+.login_page input {
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+}
+
+.register_page {
+    background: rgba(0, 0, 0, 0.5);
+
+}
+
+.register_page input {
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+}
+
+
+.register_page textarea {
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+}
