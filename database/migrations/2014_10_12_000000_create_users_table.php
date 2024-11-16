@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('password');
             $table->string('profile_image')->nullable(); // Profil rasmi uchun ustun
             $table->text('bio')->nullable(); // O'zi haqida qisqa ma'lumot
-            // $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

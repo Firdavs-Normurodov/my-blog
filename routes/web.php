@@ -32,7 +32,7 @@ Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 // Profile route with auth middleware
 Route::get('/profile', [ProfileController::class, 'profile'])->name('profile')->middleware('auth');
+Route::get('/about', [ProfileController::class, 'about'])->name('about');;
 
 // Post resource route
-// Route::get('components/layouts/show/{id}', [PostController::class, 'show'])->name('components.layouts.show');
 Route::resource('posts', PostController::class);

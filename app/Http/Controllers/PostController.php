@@ -9,13 +9,18 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     // 1. Postlarni ko'rsatish
-    public function welcome()
+ 
+    public function __construct()
     {
-        $posts = Post::with('user')->get();
-        // $posts = Post::latest()->paginate(10); // Oxirgi postlarni olish
-        // return view('', compact('posts'));
-        return view('welcome', compact('posts'));
+        // Faqat ro'yxatdan o'tgan foydalanuvchilar uchun create va edit metodlarini himoya qilish
+        $this->middleware('auth')->only(['create', 'edit']);
     }
+    public function welcome()
+{
+    $posts = Post::with('user')->latest()->paginate(6); // Postlarni kamayish tartibida oling
+    return view('welcome', compact('posts'));
+}
+
 
     // 2. Post yaratish formasi
     public function create()
@@ -31,7 +36,7 @@ class PostController extends Controller
             'title' => 'required|string|max:255',
             'short_content' => 'required|string|max:500',
             'content' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:10420',
             'category' => 'required|string',
         ]);
 
@@ -100,7 +105,7 @@ class PostController extends Controller
             'title' => 'required|string|max:255',
             'short_content' => 'required|string|max:500',
             'content' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10420',
             'category' => 'required|string',
         ]);
 

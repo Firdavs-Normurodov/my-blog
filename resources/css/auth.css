@@ -12,7 +12,7 @@
 }
 
 .login_page {
-    background: rgba(0, 0, 0, 0.5) !important;
+    background: rgba(0, 0, 0, 0.8) !important;
     padding: 5rem 2rem;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .register_page {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.8);
 
 }
 

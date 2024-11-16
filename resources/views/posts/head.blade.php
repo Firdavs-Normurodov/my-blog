@@ -14,8 +14,9 @@
     </style>
 </head>
 
-<body>
-    <div class="content">
+
+<body >
+    <div class="content w-full  ">
         @yield('content')
     </div>
 </body>
